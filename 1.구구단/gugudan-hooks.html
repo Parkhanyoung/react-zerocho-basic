@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>구구단(hooks)</title>
+	<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.14.0/babel.min.js"></script>
+</head>
+
+<body>
+	<div id='root'></div>
+
+	<script type='text/babel'>
+	const GuGuDan = () => {
+		const [first, setFirst] = React.useState(Math.ceil(Math.random() * 9));
+		const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
+		const [answer, setAnswer] = React.useState('');
+		const [result, setResult] = React.useState('');
+
+		const onChange1 = (e) => {
+			setAnswer(e.target.value);
+		}
+		const onSubmit1 = (e) => {
+			e.preventDefault();
+			if (parseInt(answer) !== first * second) {
+				setAnswer('');
+				setResult((prevResult) => {return `${answer}은 정답이 아니다.`});
+			} else {  
+				setAnswer('');
+				setResult((prevResult) => {return `${answer}은 정답이다🎉`});
+				setFirst(Math.ceil(Math.random() * 9));
+				setSecond(Math.ceil(Math.random() * 9));
+			}
+		}
+
+		return (
+			<div>
+				<div>{first} x {second}는?</div>
+				<form onSubmit={onSubmit1}>
+				<input onChange={onChange1} value={answer}/>
+				<button type='submit'>입력</button>
+				</form>
+				<div>{result}</div>
+
+			</div>
+		)
+	}
+	</script>
+	<script type='text/babel'>
+		ReactDOM.render(<GuGuDan />, document.querySelector('#root'));
+	</script>
+
+</body>
+
+</html>
