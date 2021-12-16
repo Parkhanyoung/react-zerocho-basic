@@ -11,17 +11,17 @@
 create-react-app에 대한 의존도를 높여서는 안 됨. 스스로 만들 줄 알게 된 이후에 사용하는 것이 맞음.        
        
 jsx 문법을 쓸 거면 확장자를 jsx로 하는 것이 좋음. js와 큰 차이점은 없지만, jsx 문법을 사용한다는 것을 명시하기 위함이다.       
-
-__필요한 패키지__
-1. react: 오직 리액트 컴포넌트 사용만을 위한 패키지이다. 보통 react-dom과 함께 사용된다.     
-2. react-dom: 리액트 DOM 및 server render의 진입점 역할을 한다. 'ReactDOM.render(<Componet />, node)'와 같이 사용된다.       
-3. webpack: 일반적으로 브라우저에서 사용되는 JS 파일들을 묶기(bundle) 위해 사용되는 패키지이다. 이외에도 다른 기능들이 많이 있다.      
-4. webpack-cli: webpack setting을 쉽게 할 수 있도록 해주는 명령어들을 제공한다.    
-5. babel-loader: babel과 webpack을 이용하여 JS 파일을 트랜스파일링해준다.
-6. @babel/core: babel의 핵심 기능이 담겨 있는 기본 패키지이다.   
-7. @babel/preset-env: babel이 제기능을 수행하기 위해서는 플러그인이 필요하다. preset은 babel 플러그인들을 모아둔 패키지이다.    
-8. preset-react: 최신 리액트를 위한 babel preset 패키지이다.    
-9. react-refresh:
-10. @pmmmwh/react-refresh-webpack-plugin: 
-11. webpack-dev-server:
-12. @babel/plugin-proposal-class-properties:
+        
+__필요한 패키지__    
+1. **react:** 오직 리액트 컴포넌트 사용만을 위한 패키지이다. 보통 react-dom과 함께 사용된다.     
+2. **react-dom:** 리액트 DOM 및 server render의 진입점 역할을 한다. 'ReactDOM.render(<Componet />, node)'와 같이 사용된다.       
+3. **webpack:** 일반적으로 브라우저에서 사용되는 JS 파일들을 묶기(bundle) 위해 사용되는 패키지이다. 이외에도 다른 기능들이 많이 있다.      
+4. **webpack-cli:** webpack setting을 쉽게 할 수 있도록 해주는 명령어들을 제공한다.    
+5. **babel-loader:** babel과 webpack을 이용하여 JS 파일을 트랜스파일링해준다.
+6. **@babel/core:** babel의 핵심 기능이 담겨 있는 기본 패키지이다.   
+7. **@babel/preset-env:** babel이 제기능을 수행하기 위해서는 플러그인이 필요하다. preset은 babel 플러그인들을 모아둔 패키지이다.    
+8. **@babel/preset-react:** 최신 리액트를 위한 babel preset 패키지이다.    
+9. **react-refresh:** 구동 중인 리액트 애플리케이션의 컴포넌트를 상태변화 없이 수정할 수 있게 해주는 기능을 'fast refresh'라고 한다. 이 기능은 이전의 'hot reloading'과 유사하다. 'fast refresh'를 가능하게 해주는 패키지이다. 
+10. **@pmmmwh/react-refresh-webpack-plugin:** 리액트 애플리케이션의 fast reloading을 가능하게 해주는 웹팩 플러그인이다. react-refresh와 같이 쓰인다.
+11. **webpack-dev-server:** 웹팩을 이용하여 live reloading을 제공하는 개발용 서버를 구동하기 위한 패키지이다. 개발용으로만 사용해야 한다.
+12. **@babel/plugin-proposal-class-properties:** static class property를 사용할 수 있게 해주는 플러그인이다(강좌에서는 컴포넌트에 constructor를 만들지 않고 state={} 형식으로 상태를 정의하기 위해 사용했음).
