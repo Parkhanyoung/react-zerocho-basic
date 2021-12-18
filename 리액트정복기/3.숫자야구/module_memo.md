@@ -23,7 +23,8 @@ module.exports = hello; // const hello = require('xxx')
 
 ~~~
 
-*webpack은 node js로 구동되기 때문에 기본적으로 require를 사용한다. 하지만 babel이 최신 문법인 import를 require로 바꿔주기 때문에 둘 다 사용할 수 있는 것이다! webpack.config.js는 babel이 트랜스파일해주지 않기 때문에 반드시 node 문법인 require를 사용해야 하지만, babel의 도움을 받는 리액트 컴포넌트 파일은 둘 다 사용 가능하다.    
+*webpack은 node js로 구동되기 때문에 기본적으로 require를 사용한다. 하지만 babel이 최신 문법인 import를 require로 바꿔주기 때문에 둘 다 사용할 수 있는 것이다! webpack.config.js 같은 파일은 babel이 트랜스파일해주지 않기 때문에 반드시 node 문법인 require를 사용해야 하지만, babel의 도움을 받는 리액트 컴포넌트 파일은 둘 다 사용 가능하다.    
+*babel의 도움이 있을지라도 CommonJS 방식와 ES6 방식을 혼용하는 것은 불가능하다.      
     
 이와 같은 모듈 시스템은 Javascript가 브라우저 밖으로 나올 수 있는 데 아주 중요한 역할을 했다고 한다.    
 그렇게 중요한 만큼 복잡하기도 해서 한 번에 이해하기에는 무리가 있을 것 같다.    

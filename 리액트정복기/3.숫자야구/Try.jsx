@@ -1,16 +1,13 @@
 const React = require('react');
-const { Component } = React
 
-class Try extends Component {
-  render() {
+const Try = ({value}) => {
     return (
       <>
-        <li>시도한 숫자: {this.props.value.try}</li>
-        <li>결과: {this.props.value.result}</li>
+        <li>시도한 숫자: {value.try}</li>
+        <li>결과: {value.result}</li>
         <hr/>
       </>
     )
   }
-}
 
 module.exports = Try
