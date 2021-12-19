@@ -1,7 +1,7 @@
 ### import vs require
-**require:** node js의 모듈 시스템. module.exports로 내보낸 요소를 require로 받아 올 수 있다. 또한 다른 사람이 만든 스크립트도 받아올 수 있다.
-**import:** ES6부터 새롭게 도입된 키워드. export default, 혹은 export const로 내보낸 요소를 import로 받아 올 수 있다. require와 마찬가지로 다른 사람이 만든 스크립트도 받아올 수 있다.
-*node js에서 채택한 모듈 관련 표준은 CommonJS이다.
+**require:** node js의 모듈 시스템. module.exports로 내보낸 요소를 require로 받아 올 수 있다. 또한 다른 사람이 만든 스크립트도 받아올 수 있다.              
+**import:** ES6부터 새롭게 도입된 키워드. export default, 혹은 export const로 내보낸 요소를 import로 받아 올 수 있다. require와 마찬가지로 다른 사람이 만든 스크립트도 받아올 수 있다.            
+*node js에서 채택한 모듈 관련 표준은 CommonJS이다.         
 
 ~~~javascript
 const hello = () => {
@@ -28,4 +28,4 @@ module.exports = hello; // const hello = require('xxx')
     
 이와 같은 모듈 시스템은 Javascript가 브라우저 밖으로 나올 수 있는 데 아주 중요한 역할을 했다고 한다.    
 그렇게 중요한 만큼 복잡하기도 해서 한 번에 이해하기에는 무리가 있을 것 같다.    
-여기서는 모듈과 이쯤 친해지고, 이후에 종종 다시 만나면서 조금씩 깊이 있는 이해를 갖추도록 하자.    
+여기서는 JS 모듈 시스템과 이쯤 친해지고, 이후에 종종 다시 만나면서 조금씩 깊이 있는 이해를 갖추도록 하자.    

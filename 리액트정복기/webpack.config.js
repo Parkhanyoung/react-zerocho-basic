@@ -2,9 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
+// 배포 시: process.env.NODE_ENV = 'production'; 
+
 module.exports = {
-  mode: 'development',
-  devtool: 'eval',
+  mode: 'development', // 배포 시: production
+  devtool: 'eval', // 배포 시: hidden-source-map
   // stats: {
   //   errorDetails: true,
   // },
