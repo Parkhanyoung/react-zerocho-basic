@@ -1,5 +1,5 @@
 const React = require('react')
-const { Component } = React
+const { Component, createRef } = React
 
 const Try = require('./Try')
 
@@ -42,6 +42,8 @@ class NumberBaseball extends Component {
         trial: 0,
         records: []
       });
+      this.inputRef.current.focus();
+
     } else {
       const answerArray = this.state.value.split('').map((v)=>(parseInt(v)));
       let strike = 0;
@@ -58,6 +60,7 @@ class NumberBaseball extends Component {
           trial: 0,
           records: []
         });
+        this.inputRef.current.focus();
       } else {
         for (let i = 0; i < 4; i++) {
         if (answerArray[i] === this.state.answer[i]) {
@@ -76,13 +79,15 @@ class NumberBaseball extends Component {
   }
   };
 
+  inputRef = createRef();
+
   render() {
     const { result, value, trial, records } = this.state;
     return (
       <>
         <h1>{result}</h1>
         <form onSubmit={this.onSubmit}>
-          <input maxLength={4} onChange={this.onChange} value={value} />
+          <input ref={this.inputRef} maxLength={4} onChange={this.onChange} value={value} />
           <button>입력</button>
         </form>
         <div>시도: {trial}번</div>

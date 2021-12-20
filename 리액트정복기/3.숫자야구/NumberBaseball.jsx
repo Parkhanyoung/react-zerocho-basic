@@ -1,5 +1,5 @@
 const React = require('react');
-const { useState, memo } = React;
+const { useState, useRef } = React;
 const Try = require('./Try');
 
 const getNumbers = () => {
@@ -18,6 +18,7 @@ const NumberBaseball = () => {
   const [answer, setAnswer] = useState(getNumbers());
   const [trial, setTrial] = useState(0);
   const [records, setRecords] = useState([]);
+  const inputEl = useRef(null);
 
   const initialize = () => {
     setResult('');
@@ -38,7 +39,7 @@ const NumberBaseball = () => {
       setRecords((prevRecords)=>[...prevRecords, {try: value, result: '홈런'}]);
       alert('홈런! 게임 다시 시작한다.');
       initialize();
-
+      inputEl.current.focus();
     } else {
       const answerArray = value.split('').map((v)=>(parseInt(v)));
       let strike = 0;
@@ -47,6 +48,7 @@ const NumberBaseball = () => {
         setResult(`10번 넘게 틀려서 실패! 답은 ${answer.join(',')}였다.`);
         alert('게임 다시 시작한다.');
         initialize();
+        inputEl.current.focus();
       } else {
         for (let i = 0; i < 4; i++) {
         if (answerArray[i] === answer[i]) {
@@ -67,6 +69,7 @@ const NumberBaseball = () => {
 
   return (
     <>
+      <h1>3. 숫자 야구</h1>
       <h1>{result}</h1>
       <form onSubmit={onSubmit}>
         <input maxLength={4} onChange={onChange} value={value} />

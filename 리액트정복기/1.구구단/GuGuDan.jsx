@@ -25,6 +25,7 @@ const GuGuDan = () => {
 
   return (
     <>
+      <h1>1. 구구단</h1>
       <div>{first} x {second}는 뭘까?</div>
       <form onSubmit={onSubmit1}>
       <input onChange={onChange1} value={answer}/>

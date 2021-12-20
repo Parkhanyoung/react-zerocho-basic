@@ -28,6 +28,7 @@ const WordRelay = () => {
 
   return (
       <div>
+        <h1>2. 끝말 잇기</h1>
         <p>{word}</p>
         <form onSubmit={onSubmit}>
         <input ref={inputRef} value={answer} onChange={onChange} />
