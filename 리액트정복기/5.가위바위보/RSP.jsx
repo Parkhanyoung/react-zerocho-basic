@@ -20,7 +20,7 @@ const computerChoice = (imgCoord) => {
 };
 
 const RSP = () => {
-  const [result, setResult] = useState('안녕');
+  const [result, setResult] = useState();
   const [score, setScore] = useState(0);
   const [imgCoord, setImgCoord] = useState(rspCoords.바위);
   const intervalRef = useRef();
