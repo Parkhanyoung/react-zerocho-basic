@@ -1,18 +1,18 @@
 const React = require('react');
-const { useCallback } = React;
-const 제발 = require('./TicTacToe');
-console.log(제발); 
+const { useCallback, memo } = React;
 
 const Td = ({ dispatch, rowIndex, cellIndex, cellData } ) => {
   
   const onClickTd = useCallback(() => {
+    if (cellData) {
+      return;
+    }
     dispatch({ type: 'CLICK_CELL', row: rowIndex, cell: cellIndex });
-    dispatch({ type: 'SET_TURN' });
-  }, []);
+  }, [cellData]);
 
   return (
       <td onClick={onClickTd}>{cellData}</td>
   );
 }
 
-module.exports = Td;
+module.exports = memo(Td);
