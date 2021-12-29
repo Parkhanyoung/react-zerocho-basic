@@ -1,11 +1,15 @@
 const React = require('react');
-const { useState, useCallback } = React;
+const { useState, useCallback, useContext } = React;
+
+const { MineSearch } = require('./MineSearch');
+
 
 const Form = () => {
   const [row, setRow] = useState(10);
   const [cell, setCell] = useState(10);
-  const [mine, setMine] = useState(20);ㅌ
-
+  const [mine, setMine] = useState(20);
+  const value = useContext({});
+ 
   const onChangeRow = useCallback((e) => {
     setRow(e.target.value);
   }, [])

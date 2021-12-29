@@ -115,4 +115,7 @@ const TicTacToe = () => {
   );
 }
 
-module.exports = TicTacToe;
+module.exports = {
+  TicTacToe,
+  CLICK_CELL
+}
