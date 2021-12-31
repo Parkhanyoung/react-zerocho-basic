@@ -1,6 +1,7 @@
 const React = require('react');
 const { useEffect, useCallback, useReducer } = React;
 const Table = require('./Table');
+const {SET_WINNER, SET_TURN, RESET_GAME, CLICK_CELL} = require('./constant');
 
 const initialState = {
   winner: '',
@@ -13,11 +14,7 @@ const initialState = {
   recentCell: [-1, -1]
 };
 
-// action의 이름은 대문자로 하고, 상수로 정의해준다.
-const SET_WINNER = 'SET_WINNER';
-const CLICK_CELL = 'CLICK_CELL';
-const SET_TURN = 'SET_TURN';
-const RESET_GAME = 'RESET_GAME';
+
 
 const reducer = (state, action) => {
   switch (action.type) {

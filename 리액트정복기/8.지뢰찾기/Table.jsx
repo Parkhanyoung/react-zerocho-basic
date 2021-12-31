@@ -1,8 +1,15 @@
 const React = require('react');
-const { useReducer } = React;
+const { TableContext } = require('./Context');
+const { useContext, memo } = React;
+const Tr = require('./Tr');
 
 const Table = () => {
-  return <></>
+  const { tableData } = useContext(TableContext);
+  return (
+  <table>
+    {Array(tableData.length).fill().map((tr, i)=><Tr rowIndex={i} />)}
+  </table>
+  )
 };
 
-module.exports = Table;
+module.exports = memo(Table);

@@ -48,8 +48,9 @@ module.exports = {
     publicPath: '/dist/'
   },
   devServer: {
+    // 새로고침 시 404 뜨는 오류 막기 (dev 서버에서 router 주소를 인식 못하는 점 해결)
+    historyApiFallback: true,
     devMiddleware: { publicPath: '/dist/' },
     static: { directory: path.resolve(__dirname) },
-    hot: true
   },
 };
